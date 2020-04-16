@@ -1,0 +1,12 @@
+﻿  sqlite3.c
+  Boat.cpp
+  Booking System.cpp
+  Customer.cpp
+  LinkedList.cpp
+  MarinaManagment.cpp
+  RegSys.cpp
+  SQLCon.cpp
+  Transaction.cpp
+  Generating Code...
+C:\Users\User\Desktop\Patryk - nie usuwaj\Booking System\Booking System\RegSys.cpp(114): warning C4715: 'RegSys::RegSysStart': not all control paths return a value
+  Booking System.vcxproj -> C:\Users\User\Desktop\Patryk - nie usuwaj\Booking System\x64\Debug\Booking System.exe

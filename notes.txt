@@ -1,0 +1,18 @@
+length - max 15,
+draft - max 5m
+marina length 150m
+***FAILED BOOKING****
+if not enough room cancel transaction with appropirate msg
+return to main menu after
+**** SUCCESSFUL BOOKING****
+duration of stay in months
+full price displayed..
+price is 10 pounds per meter per month
+OPTION TO REJECT
+*** ACCEPTED QUOTE *****
+Take name, name of boat
+type of boat
+narrow sailing or motor
+boat length
+added to system records 
+return to main menu
