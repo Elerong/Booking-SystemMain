@@ -106,7 +106,7 @@ void RegSys::RegSysStart(LinkedList list, const char* DB, MarinaManagment marina
 								cout << endl << "To stay at the Marine for: " << temp << " months" << endl << "It will cost total of: " << transaction.gettotalcost() << " GBP";
 								cout << " || " << transaction.gettotalcost() / temp << " GBP per month" << endl << endl;
 
-								cout << "1. Accept the Quote" << endl
+								cout << "1. Accept the quote" << endl
 									<< "2. Reject the quote and try again" << endl
 									<< "3. Main Menu" << endl
 									<< "4. Exit program"
@@ -176,41 +176,50 @@ void RegSys::RegSysStart(LinkedList list, const char* DB, MarinaManagment marina
 											{
 												system("CLS");
 												cout << "Please wait." << endl;
-												cout << "Entering Marina:      Leaving Marina:        Waiting: " << endl;
-												cout << "                                            " << newcustomer.GetCustomerLName() << " || " << newcustomer.GetCustomerBoat().getboatname() << " (" << newcustomer.GetMarinaSpace() << ")" << endl;
-												cout << "                                            " << temp << endl;
+												cout << "Entering Marina:  |   Holding Bay   |  Leaving Marina:  |  Waiting: " << endl;
+												cout << "                                                        " << newcustomer.GetCustomerLName() << " || " << newcustomer.GetCustomerBoat().getboatname() << " (" << newcustomer.GetMarinaSpace() << ")" << endl;
+												cout << "                                                        " << temp << endl;
 												std::this_thread::sleep_for(dura);
-
+												
 												system("CLS");
 												cout << "Please wait.." << endl;
-												cout << "Entering Marina:      Leaving Marina:        Waiting: " << endl;
-												cout << "                                            " << newcustomer.GetCustomerLName() << " || " << newcustomer.GetCustomerBoat().getboatname() << " (" << newcustomer.GetMarinaSpace() << ")" << endl;
+												cout << "Entering Marina:  |   Holding Bay   |  Leaving Marina:  |  Waiting: " << endl;
+												cout << "                                                        " << newcustomer.GetCustomerLName() << " || " << newcustomer.GetCustomerBoat().getboatname() << " (" << newcustomer.GetMarinaSpace() << ")" << endl;
 												cout << "	              " << temp << endl;
 												std::this_thread::sleep_for(dura);
-
+												std::this_thread::sleep_for(dura);
 												system("CLS");
 												cout << "Please wait..." << endl;
-												cout << "Entering Marina:      Leaving Marina:        Waiting: " << endl;
-												cout << "                                            " << newcustomer.GetCustomerLName() << " || " << newcustomer.GetCustomerBoat().getboatname() << " (" << newcustomer.GetMarinaSpace() << ")" << endl;
-												cout << "                                            " << temp << endl;
+												cout << "Entering Marina:  |   Holding Bay   |  Leaving Marina:  |  Waiting: " << endl;
+												cout << "                                                        " << newcustomer.GetCustomerLName() << " || " << newcustomer.GetCustomerBoat().getboatname() << " (" << newcustomer.GetMarinaSpace() << ")" << endl;
+												cout << "                                     " << temp << endl;
 												std::this_thread::sleep_for(dura);
-
+												std::this_thread::sleep_for(dura);
 												system("CLS");
 												cout << "Please wait." << endl;
-												cout << "Entering Marina:      Leaving Marina:        Waiting: " << endl;
-												cout << newcustomer.GetCustomerLName() << " || " << newcustomer.GetCustomerBoat().getboatname() << " (" << newcustomer.GetMarinaSpace() << ")" << endl;
-												cout << "                                            " << temp << endl;
+												cout << "Entering Marina:  |   Holding Bay   |  Leaving Marina:  |  Waiting: " << endl;
+												cout <<"                  " << newcustomer.GetCustomerLName() << " || " << newcustomer.GetCustomerBoat().getboatname() << " (" << newcustomer.GetMarinaSpace() << ")" << endl;
+												cout << "                                                         " << temp << endl;
 											}
+											std::this_thread::sleep_for(dura);
 											std::this_thread::sleep_for(dura);
 											system("CLS");
 											cout << "Please wait.." << endl;
-											cout << "Entering Marina:      Leaving Marina:        Waiting: " << endl;
-											cout << "                                            " << temp << endl;
+											cout << "Entering Marina:  |   Holding Bay   |  Leaving Marina:  |  Waiting: " << endl;
+											cout << newcustomer.GetCustomerLName() << " || " << newcustomer.GetCustomerBoat().getboatname() << " (" << newcustomer.GetMarinaSpace() << ")" << endl;
+											cout << "                                                         " << temp << endl;
+											std::this_thread::sleep_for(dura);
 											std::this_thread::sleep_for(dura);
 
 											system("CLS");
 											cout << "Please wait..." << endl;
-											cout << "Entering Marina:      Leaving Marina:        Waiting: " << endl;
+											cout << "Entering Marina:  |   Holding Bay   |  Leaving Marina:  |  Waiting: " << endl;
+											cout << "                 " << temp << endl << endl;
+											std::this_thread::sleep_for(dura);
+											std::this_thread::sleep_for(dura);
+											system("CLS");
+											cout << "Please wait..." << endl;
+											cout << "Entering Marina:  |   Holding Bay   |  Leaving Marina:  |  Waiting: " << endl;
 											cout << temp << endl << endl;
 											std::this_thread::sleep_for(dura);
 											std::this_thread::sleep_for(dura);

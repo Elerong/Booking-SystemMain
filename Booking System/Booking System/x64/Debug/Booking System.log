@@ -1,4 +1,4 @@
 ﻿  RegSys.cpp
-C:\Users\User\Documents\GitHub\Booking-System\Booking System\Booking System\RegSys.cpp(101,19): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-C:\Users\User\Documents\GitHub\Booking-System\Booking System\Booking System\RegSys.cpp(309,24): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-  Booking System.vcxproj -> C:\Users\User\Documents\GitHub\Booking-System\Booking System\x64\Debug\Booking System.exe
+C:\Users\User\Desktop\Booking-System\Booking System\Booking System\RegSys.cpp(101,19): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\User\Desktop\Booking-System\Booking System\Booking System\RegSys.cpp(318,24): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+  Booking System.vcxproj -> C:\Users\User\Desktop\Booking-System\Booking System\x64\Debug\Booking System.exe
