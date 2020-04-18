@@ -106,7 +106,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <LanguageStandard>stdcpplatest</LanguageStandard>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -152,7 +152,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\sqlite-amalgamation-3310100\sqlite3.c" />
+    <ClCompile Include="LinkedList.cpp" />
+    <ClCompile Include="MarinaSpace.cpp" />
+    <ClCompile Include="sqlite3.c" />
     <ClCompile Include="Boat.cpp" />
     <ClCompile Include="Booking System.cpp">
       <AdditionalUsingDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:\Pulpit\Patryk - nie usuwaj\Booking System\Booking System;%(AdditionalUsingDirectories)</AdditionalUsingDirectories>
@@ -161,7 +163,6 @@
       <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\Pulpit\Patryk - nie usuwaj\Booking System\Booking System;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <ClCompile Include="Customer.cpp" />
-    <ClCompile Include="LinkedList.cpp" />
     <ClCompile Include="MarinaManagment.cpp" />
     <ClCompile Include="RegSys.cpp" />
     <ClCompile Include="SQLCon.cpp" />
@@ -172,6 +173,7 @@
     <ClInclude Include="Customer.h" />
     <ClInclude Include="LinkedList.h" />
     <ClInclude Include="MarinaManagment.h" />
+    <ClInclude Include="MarinaSpace.h" />
     <ClInclude Include="RegSys.h" />
     <ClInclude Include="SQLCon.h" />
     <ClInclude Include="Transaction.h" />

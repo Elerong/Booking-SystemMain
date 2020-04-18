@@ -5,6 +5,7 @@
 #include <stdio.h>
 #include <list>
 #include "Customer.h"
+#include "MarinaManagment.h"
 #include "LinkedList.h"
 
 #ifndef SQLCON_H
@@ -21,7 +22,10 @@ class SQLCon
 	static int selectData(const char* s);
     static int callback(void* NotUsed, int argc, char** argv, char** azColName);
 	static inline list<Customer> c_List;
-
+	static inline LinkedList xlist;
+	static int deletedata(const char* s, string, string, string);
+private:
+	
 };
 
 #endif

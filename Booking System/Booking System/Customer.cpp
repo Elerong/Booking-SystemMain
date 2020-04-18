@@ -1,8 +1,6 @@
 #include "Customer.h"
 	Customer::Customer()
 	{
-		ID = 0;
-		MakeID();
 		Boat boat;
 	};
 	void Customer::SetCustomerBoat(Boat newboat)
@@ -17,10 +15,7 @@
 	{
 		name = newName;
 	};
-	void Customer::MakeID()
-	{
-		ID = ID + 1;
-	}
+
 	void Customer::SetID(int x) 
 	{
 		ID = x;
@@ -40,5 +35,25 @@
 	Transaction Customer::GetTransaction()
 	{
 		return transaction;
+	}
+	void Customer::SetCustomerLName(string name)
+	{
+		lname = name;
+	}
+	string Customer::GetCustomerLName()
+	{
+		return lname;
+	}
+	int Customer::GetMarinaSpace()
+	{
+
+			return space;
+		
+		
+	
+	}
+	void Customer::SetMarinaSpace(int newspace)
+	{
+		space = newspace;
 	}
 	

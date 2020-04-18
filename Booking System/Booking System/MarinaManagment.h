@@ -1,13 +1,15 @@
 #pragma once
 #include "LinkedList.h"
+#include <list>
 class MarinaManagment
 {
 public:
 	MarinaManagment();
 	float getspaceleft();
-	void substractspace(float);
-private:
+	void setspaceleft(float);
 	float marina;
-	LinkedList list;
+
+private:
+
 };
 

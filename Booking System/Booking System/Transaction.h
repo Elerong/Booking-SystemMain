@@ -5,12 +5,16 @@
 #include <string>
 #include <stdio.h>
 #include <time.h>
+#include <chrono>
+
+
+
 using namespace std;
 class Transaction
 {
 public:
 	Transaction();
-	void CalcTransaction(int, float);
+	void CalcTransaction(int, float, int);
 	int gettransactionID();
 	void MakeTransactionID();
 	void SetTransactionID(int);

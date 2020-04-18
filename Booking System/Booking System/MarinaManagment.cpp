@@ -7,7 +7,7 @@ float MarinaManagment::getspaceleft()
 {
 	return marina;
 }
-void MarinaManagment::substractspace(float minus) 
+void MarinaManagment::setspaceleft(float minus) 
 {
-	marina -= minus;
+	marina = minus;
 }

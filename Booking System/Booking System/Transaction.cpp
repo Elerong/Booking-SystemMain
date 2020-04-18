@@ -2,10 +2,10 @@
 #define _CRT_SECURE_NO_WARNINGS
 
 Transaction::Transaction(){}
-void Transaction::CalcTransaction(int months, float length)
+void Transaction::CalcTransaction(int months, float length, int x)
 {
 	cost = length * 10 * months;
-    ID += 1;
+    ID = x;
 }
 int Transaction::gettransactionID()
 {
@@ -17,7 +17,7 @@ void Transaction::SetTransactionID(int x)
 }
 void Transaction::MakeTransactionID()
 {
-	ID += 1;
+	
 }
 string Transaction::NowTimeDate() 
 {
@@ -34,14 +34,25 @@ string Transaction::NowTimeDate()
     return str;
  
 }
-void Transaction::SetTimeLeft(int months)
+void Transaction::SetTimeLeft(int xmonths)
 {
-    time_t currentime = time(0);
-    tm* ltm = localtime(&currentime);
-    int year = 1900 + ltm->tm_year;
-    int month = months + 1 +  ltm->tm_mon;
-    int day = ltm->tm_mday;
-    TimeLeft = std::to_string(day) + "-" + std::to_string(month) + "-" + std::to_string(year);
+    
+    
+    using std::chrono::system_clock;
+
+    using days = std::chrono::duration
+    <int, std::ratio_multiply<std::ratio<24>, std::chrono::hours::period>>;
+    using years = std::chrono::duration
+    <int, std::ratio_multiply<std::ratio<146097, 400>, days::period>>;
+    using months = std::chrono::duration
+    <int, std::ratio_divide<years::period, std::ratio<12>>>;
+    std::chrono::system_clock::time_point now = std::chrono::system_clock::now() + months{ xmonths };
+    std::time_t now_c = std::chrono::system_clock::to_time_t(now);
+    std::tm now_tm = *std::localtime(&now_c);
+    char buffer[80];
+    strftime(buffer,80, "%d-%m-%Y", &now_tm);
+      
+    TimeLeft = buffer;
 }
 float Transaction::gettotalcost()
 {

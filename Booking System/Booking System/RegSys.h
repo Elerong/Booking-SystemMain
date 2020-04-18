@@ -6,35 +6,42 @@
 #include <string>
 #include "Boat.h"
 #include "Customer.h"
+#include <ctype.h>
 #include <locale>
+#include <algorithm>
+#include <chrono>
+#include <thread>
+#include <cctype>
+#include <random>
+#include "MarinaSpace.h"
 
 using namespace std;
 #ifndef REGSYS_H
 #define REGSYS_H
 class RegSys
 {
-public:
 
+public:
+	RegSys();
 
 	//overload constructor
-	LinkedList RegSysStart(LinkedList,const char* DB);
+	void RegSysStart(LinkedList,const char* DB, MarinaManagment, MarinaSpace);
 	//Destructor
 	~RegSys();
-	void PassOnRemainingSpace(float);
+	MarinaManagment ReturnUpdatedSpace();
+	void SetRamainingUpdatedSpace(int);
 private:
 	
 
-	string name;
 	//member variables
-	Customer customer;
+
 	float length;
 	float draft;
 	int option;
 	string newboattype;
 	string newboatname;
-	float price;
-	int months;
-	float marina;
+	LinkedList xlist;
+	MarinaManagment UpdatedSpace;
 
 
 };

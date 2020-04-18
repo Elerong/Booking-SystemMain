@@ -13,11 +13,12 @@ int SQLCon::createDB(const char* s)
 int SQLCon::createTable(const char* s)
 {
 	sqlite3* DB;
-
 	string sql =
 		"CREATE TABLE IF NOT EXISTS CUSTOMERS("
 		"ID INTEGER PRIMARY KEY NOT NULL, "
+		"SPACE      INTEGER(6),"
 		"NAME       CHAR(30),"
+		"LNAME      CHAR(30),"
 		"BOAT_NAME     CHAR(50),"
 		"BOAT_TYPE     CHAR(50), "
 		"BOAT_LENGTH      FLOAT(10,2),"
@@ -38,7 +39,7 @@ int SQLCon::createTable(const char* s)
 			sqlite3_free(messageError);
 		}
 		else {
-			cout << "System Loaded..." << endl;
+			cout << "System Loaded..." << endl << endl;
 		}
 		sqlite3_close(DB);
 	}
@@ -55,9 +56,11 @@ int SQLCon::insertData(const char* s, Customer customer)
 	int exit = sqlite3_open(s, &DB);
 	
 
-	std::string sql = "INSERT INTO CUSTOMERS (ID, NAME, BOAT_NAME, BOAT_TYPE, BOAT_LENGTH, BOAT_DRAFT, BOOKING_EXPIRY, BOOKING_DATE, TRANS_ID, COST) VALUES('"
-		+ std::to_string(customer.GetID()) + 
-		"', '" + customer.GetCustomerName() + "', '"
+	std::string sql = "INSERT INTO CUSTOMERS (ID, SPACE , NAME,LNAME, BOAT_NAME, BOAT_TYPE, BOAT_LENGTH, BOAT_DRAFT, BOOKING_EXPIRY, BOOKING_DATE, TRANS_ID, COST) VALUES('"
+		+ std::to_string(customer.GetID()) + "', '"
+		+ std::to_string(customer.GetMarinaSpace()) + "', '"
+		+ customer.GetCustomerName() + "', '"
+		+ customer.GetCustomerLName() + "', '"
 		+ customer.GetCustomerBoat().getboatname() + "', '"
 		+ customer.GetCustomerBoat().getboattype() + "', '"
 		+ std::to_string(customer.GetCustomerBoat().getboatlength()) + "', '"
@@ -67,6 +70,7 @@ int SQLCon::insertData(const char* s, Customer customer)
 		+ std::to_string(customer.GetTransaction().gettransactionID()) + "', '"
 		+ std::to_string(customer.GetTransaction().gettotalcost()) + "');";
 	exit = sqlite3_exec(DB, sql.c_str(), NULL, 0, &messageError);
+	
 	if (exit != SQLITE_OK)
 	{
 		cerr << "Error Insert" << endl;
@@ -79,11 +83,15 @@ int SQLCon::insertData(const char* s, Customer customer)
 }
 int SQLCon::selectData(const char* s)
 {
+
+	LinkedList l;
+	xlist = l;
 	
 	//Selects all customers
 	sqlite3* DB;
 	int exit = sqlite3_open(s, &DB);
 	string sql = "SELECT * FROM CUSTOMERS";
+
 	sqlite3_exec(DB, sql.c_str(), callback, NULL, NULL);
 	
 	return 0;
@@ -98,21 +106,26 @@ int SQLCon::callback(void* NotUsed, int argc, char** argv, char** azColName)
 	
 	//Prints all customer data
 		c.SetID(std::stoi(argv[0]));
-		c.SetCustomerName(argv[1]);
-		b.setboatname(argv[2]);
-		b.setboattype(argv[3]);
-		b.setboatlength(std::stof(argv[4]));
-		b.setboatdraft(std::stof(argv[5]));
-		t.ReCallTimeLeft(argv[6]);
-		t.ReCallBookingTime(argv[7]);
-		t.SetTransactionID(std::stoi(argv[8]));
-		t.ReCallTotalCost(std::stof(argv[9]));
+		c.SetMarinaSpace(std::stoi(argv[1]));
+		c.SetCustomerName(argv[2]);
+		c.SetCustomerLName(argv[3]);
+		b.setboatname(argv[4]);
+		b.setboattype(argv[5]);
+		b.setboatlength(std::stof(argv[6]));
+		b.setboatdraft(std::stof(argv[7]));
+		t.ReCallTimeLeft(argv[8]);
+		t.ReCallBookingTime(argv[9]);
+		t.SetTransactionID(std::stoi(argv[10]));
+		t.ReCallTotalCost(std::stof(argv[11]));
 		
 		
 		
 		c.SetCustomerBoat(b);
 		c.AddTransaction(t);
-		c_List.push_back(c);
+
+		xlist.AddNode(c);
+
+		
 		
 	//cout << "ID: " << c.GetID() << endl;
 	//cout << "Name: " << c.GetCustomerName() << endl;
@@ -124,11 +137,19 @@ int SQLCon::callback(void* NotUsed, int argc, char** argv, char** azColName)
 	//cout << "Booking Time: " << c.GetTransaction().BookingTime() << endl;
 	//cout << "Transaction: " << c.GetTransaction().gettransactionID() << endl;
 	//cout << "Total Cost:" << c.GetTransaction().gettotalcost() << endl;
-	cout << endl;
 	return 0;
 	
 }
+int SQLCon::deletedata(const char* s, string LName, string BoatName, string name)
+{
+	sqlite3* DB;
+	char* messageError;
+	int exit = sqlite3_open(s, &DB);
 
+	string sql = "DELETE FROM CUSTOMERS WHERE LNAME='" + LName + "' AND BOAT_NAME='" + BoatName + "' AND NAME='"+ name +"';";
+	sqlite3_exec(DB, sql.c_str(), callback, NULL, &messageError);
+	return 0;
+}
 
 
 
