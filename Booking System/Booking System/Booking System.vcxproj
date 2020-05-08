@@ -156,7 +156,7 @@
     <ClCompile Include="MarinaSpace.cpp" />
     <ClCompile Include="sqlite3.c" />
     <ClCompile Include="Boat.cpp" />
-    <ClCompile Include="Booking System.cpp">
+    <ClCompile Include="Main.cpp">
       <AdditionalUsingDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:\Pulpit\Patryk - nie usuwaj\Booking System\Booking System;%(AdditionalUsingDirectories)</AdditionalUsingDirectories>
       <AdditionalUsingDirectories Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\Pulpit\Patryk - nie usuwaj\Booking System\Booking System;%(AdditionalUsingDirectories)</AdditionalUsingDirectories>
       <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:\Pulpit\Patryk - nie usuwaj\Booking System\Booking System;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>

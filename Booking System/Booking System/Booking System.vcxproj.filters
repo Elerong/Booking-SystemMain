@@ -16,37 +16,49 @@
     <Filter Include="Pliki nagłówkowe\Date">
       <UniqueIdentifier>{7ef1b25f-6afa-4985-8221-abfd7a9b6a39}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Pliki źródłowe\Customer">
+      <UniqueIdentifier>{6a4c7432-60ee-4fc3-8c75-8e930475b6a4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Pliki źródłowe\Marina">
+      <UniqueIdentifier>{9f036a95-cded-4960-81c2-4bea3ff427b8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Pliki źródłowe\Booking/Registration">
+      <UniqueIdentifier>{6129973a-138d-4939-8246-cd7204cab1c6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Pliki źródłowe\DataBase">
+      <UniqueIdentifier>{0103daac-cd11-4f48-800d-523d3a636f68}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Booking System.cpp">
-      <Filter>Pliki źródłowe</Filter>
-    </ClCompile>
-    <ClCompile Include="RegSys.cpp">
-      <Filter>Pliki źródłowe</Filter>
-    </ClCompile>
-    <ClCompile Include="Boat.cpp">
+    <ClCompile Include="Main.cpp">
       <Filter>Pliki źródłowe</Filter>
     </ClCompile>
     <ClCompile Include="Customer.cpp">
-      <Filter>Pliki źródłowe</Filter>
-    </ClCompile>
-    <ClCompile Include="SQLCon.cpp">
-      <Filter>Pliki źródłowe</Filter>
+      <Filter>Pliki źródłowe\Customer</Filter>
     </ClCompile>
     <ClCompile Include="Transaction.cpp">
-      <Filter>Pliki źródłowe</Filter>
+      <Filter>Pliki źródłowe\Customer</Filter>
     </ClCompile>
-    <ClCompile Include="MarinaManagment.cpp">
-      <Filter>Pliki źródłowe</Filter>
-    </ClCompile>
-    <ClCompile Include="sqlite3.c">
-      <Filter>Pliki źródłowe</Filter>
+    <ClCompile Include="Boat.cpp">
+      <Filter>Pliki źródłowe\Customer</Filter>
     </ClCompile>
     <ClCompile Include="MarinaSpace.cpp">
-      <Filter>Pliki źródłowe</Filter>
+      <Filter>Pliki źródłowe\Marina</Filter>
+    </ClCompile>
+    <ClCompile Include="MarinaManagment.cpp">
+      <Filter>Pliki źródłowe\Marina</Filter>
+    </ClCompile>
+    <ClCompile Include="RegSys.cpp">
+      <Filter>Pliki źródłowe\Booking/Registration</Filter>
+    </ClCompile>
+    <ClCompile Include="sqlite3.c">
+      <Filter>Pliki źródłowe\DataBase</Filter>
+    </ClCompile>
+    <ClCompile Include="SQLCon.cpp">
+      <Filter>Pliki źródłowe\DataBase</Filter>
     </ClCompile>
     <ClCompile Include="LinkedList.cpp">
-      <Filter>Pliki źródłowe</Filter>
+      <Filter>Pliki źródłowe\DataBase</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

@@ -8,6 +8,9 @@ using namespace std;
 class Boat
 {
 public:
+	
+	//ALL OF THE FUNCTIONALITY IS EXPLAINED IN .CPP FILES
+
 	//default constructor
 	Boat();
 	//overload constructor
@@ -32,6 +35,7 @@ public:
 	void setboatname(string);
 	
 private:
+	//MEMBER VARIABLES USED FOR STORING BOAT DATAS
 	float boatlength;
 	float draft;
 	string boattype;

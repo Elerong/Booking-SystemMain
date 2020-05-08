@@ -11,6 +11,7 @@ using namespace std;
 class Customer
 {
 
+	//ALL OF THE FUNCTIONALITY IS EXPLAINED IN .CPP FILES
 public:
 	Customer();
 	void SetCustomerBoat(Boat);
@@ -26,10 +27,11 @@ public:
 	int GetMarinaSpace();
 	void SetMarinaSpace(int);
 private:
+	//STORES CUSTOMER DETAILS
 	int ID;
 	string name;
 	string lname;
-	//to add transaction
+	//OBJECTS THAT ARE HELD WITHIN CUSTOMER WITH DATA
 	Boat boat;
 	Transaction transaction;
 	int space;
